@@ -2,6 +2,15 @@ name: ESP32 builder IDF 4.4.3
 
 on:
   workflow_dispatch:  # Manually start a workflow
+      inputs:
+        idf_branch:
+          type: string
+          description: Set which branch of ESP-IDF to be used for compilation
+          required: true
+        arduino_branch:
+          type: string
+          description: Set which branch of arduino-esp32 to be used for compilation
+          required: true
 #  push:
 #    branches: master
 #    paths-ignore:
@@ -27,7 +36,7 @@ jobs:
       with:
         name: esp32-arduino
         path: ./esp32-arduino
-    - name: Display files from folder esp32-arduino 
+    - name: Display files from folder esp32-arduino
       run: ls esp32-arduino/*
     - name: Release
       uses: softprops/action-gh-release@v1

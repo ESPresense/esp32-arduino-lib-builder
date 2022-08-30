@@ -6,7 +6,7 @@ if [ -z $IDF_PATH ]; then
 fi
 
 if [ -z $IDF_BRANCH ]; then
-	IDF_BRANCH="tag/v4.4.2"
+	IDF_BRANCH="release/v4.4"
 fi
 
 if [ -z $AR_PR_TARGET_BRANCH ]; then
@@ -34,7 +34,7 @@ AR_USER="ESPresense"
 AR_REPO="espressif/arduino-esp32"
 
 # Arduino branch to use
-AR_BRANCH="tags/2.0.4"
+AR_BRANCH="master"
 
 AR_REPO_URL="https://github.com/$AR_REPO.git"
 if [ -n $GITHUB_TOKEN ]; then
